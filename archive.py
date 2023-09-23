@@ -56,9 +56,21 @@ def main():
 
     os.chdir(ACCOUNT)
 
+    i = 0
+    SCREENSHOT_COUNT = 100
+
     CURRENT_DATETIME = datetime.now()
+    CURRENT_TIME = CURRENT_DATETIME.strftime("%Y-%m-%d_%H-%M-%S")
     UNIX_TIME = time.mktime(CURRENT_DATETIME.timetuple())
-    driver.save_screenshot(filename="{}_header_{}.png".format(ACCOUNT, round(UNIX_TIME)))
+
+    while i < SCREENSHOT_COUNT:
+
+        
+
+        driver.save_screenshot(filename="{}_{}_{}.png".format(ACCOUNT, CURRENT_TIME, i))
+        webdriver.ActionChains(driver).scroll_by_amount(0, 1000).perform()
+
+        i += 1
     driver.quit()
 
 
