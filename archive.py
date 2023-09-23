@@ -64,9 +64,6 @@ def main():
     UNIX_TIME = time.mktime(CURRENT_DATETIME.timetuple())
 
     while i < SCREENSHOT_COUNT:
-
-        
-
         driver.save_screenshot(filename="{}_{}_{}.png".format(ACCOUNT, CURRENT_TIME, i))
         webdriver.ActionChains(driver).scroll_by_amount(0, 1000).perform()
 
