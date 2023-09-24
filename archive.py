@@ -35,7 +35,6 @@ def main():
     ACCOUNT = sys.argv[1]
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
-    #options.add_argument("--start-maximized")
 
     driver = webdriver.Chrome(options=options)
     driver.set_window_size(WIDTH, HEIGHT)
@@ -54,7 +53,6 @@ def main():
             cookie["value"] = escape_slashes(line_spl[6][:-1])
             cookie["domain"] = "twitter.com"
 
-            #print(cookie)
             driver.add_cookie(cookie)
 
     cookie_f.close()
@@ -62,7 +60,6 @@ def main():
     # Reload the page with the session cookie
     driver.refresh()
 
-    # driver.implicitly_wait(30)
     time.sleep(5)
 
     os.chdir("archive")
