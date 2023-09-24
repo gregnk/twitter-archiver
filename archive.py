@@ -73,7 +73,7 @@ def main():
     os.chdir(ACCOUNT)
 
     i = 0
-    SCREENSHOT_COUNT = 100
+    SCREENSHOT_COUNT = int(sys.argv[2])
 
     CURRENT_DATETIME = datetime.now()
     CURRENT_TIME = CURRENT_DATETIME.strftime("%Y-%m-%d_%H-%M-%S")
