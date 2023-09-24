@@ -75,9 +75,9 @@ def main():
     i = 0
     SCREENSHOT_COUNT = int(sys.argv[2])
 
-    CURRENT_DATETIME = datetime.now()
-    CURRENT_TIME = CURRENT_DATETIME.strftime("%Y-%m-%d_%H-%M-%S")
-    UNIX_TIME = time.mktime(CURRENT_DATETIME.timetuple())
+    DATETIME_NOW = datetime.now()
+    CURRENT_TIME = DATETIME_NOW.strftime("%Y-%m-%d_%H-%M-%S")
+    UNIX_TIME = time.mktime(DATETIME_NOW.timetuple())
 
     if (os.path.isdir(CURRENT_TIME) == False):
         os.mkdir(CURRENT_TIME)
