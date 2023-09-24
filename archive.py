@@ -79,6 +79,10 @@ def main():
     CURRENT_TIME = CURRENT_DATETIME.strftime("%Y-%m-%d_%H-%M-%S")
     UNIX_TIME = time.mktime(CURRENT_DATETIME.timetuple())
 
+    if (os.path.isdir(CURRENT_TIME) == False):
+        os.mkdir(CURRENT_TIME)
+        os.chdir(CURRENT_TIME)
+
     while i < SCREENSHOT_COUNT:
         SCREENSHOT_FILENAME = "{}_{}_{}.png".format(ACCOUNT, CURRENT_TIME, i)
         print(SCREENSHOT_FILENAME)
