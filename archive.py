@@ -30,6 +30,8 @@ def escape_slashes(input):
     
 
 def main():
+    
+    SCREENSHOT_COUNT = int(sys.argv[2])
 
     # Start the headless browser
     ACCOUNT = sys.argv[1]
@@ -70,7 +72,6 @@ def main():
     os.chdir(ACCOUNT)
 
     i = 0
-    SCREENSHOT_COUNT = int(sys.argv[2])
 
     DATETIME_NOW = datetime.now()
     CURRENT_TIME = DATETIME_NOW.strftime("%Y-%m-%d_%H-%M-%S")
