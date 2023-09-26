@@ -24,6 +24,7 @@ import json
 COOKIE_FILE_PATH = '.secrets/twitter.com_cookies.txt'
 WIDTH = 1080
 HEIGHT = 1920
+SCREENSHOT_COUNT_WARN_LIMIT = 350
 
 def escape_slashes(input):
     return input.replace("\"", "\\\"")
@@ -32,6 +33,13 @@ def escape_slashes(input):
 def main():
     
     SCREENSHOT_COUNT = int(sys.argv[2])
+
+    if (SCREENSHOT_COUNT > SCREENSHOT_COUNT_WARN_LIMIT):
+        print("WARNING: Exceeds scroll limit, enter y to confirm")
+        decision = input()
+        if (decision != "y" and decision != "Y"):
+            return
+
 
     # Start the headless browser
     ACCOUNT = sys.argv[1]
