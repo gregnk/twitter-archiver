@@ -32,7 +32,7 @@ def escape_slashes(input):
 
 def main():
     
-    SCREENSHOT_COUNT = int(sys.argv[2])
+    SCREENSHOT_COUNT = int(sys.argv[2]) if (len(sys.argv) >= 3) else SCREENSHOT_COUNT_WARN_LIMIT
 
     if (SCREENSHOT_COUNT > SCREENSHOT_COUNT_WARN_LIMIT):
         print("WARNING: Exceeds scroll limit, enter y to confirm")
