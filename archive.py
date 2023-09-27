@@ -40,7 +40,6 @@ def main():
         if (decision != "y" and decision != "Y"):
             return
 
-
     # Start the headless browser
     ACCOUNT = sys.argv[1]
     options = webdriver.ChromeOptions()
